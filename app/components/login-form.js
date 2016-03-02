@@ -1,11 +1,9 @@
 import Ember from 'ember';
 
 const { service } = Ember.inject;
-const { store } = Ember.inject;
 
 export default Ember.Component.extend({
   session: service('session'),
-  store: service("store"),
 
 
   actions: {

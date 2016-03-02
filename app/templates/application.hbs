@@ -11,7 +11,7 @@
         <li class="active" id="albums">{{link-to 'Episodes' 'episodes'}}</li>
         <li class="active" id="songs">{{link-to 'Writers' 'writers'}}</li>
         {{#if session.isAuthenticated}}
-          <li class="active"><a href="#">Hi, {{session.currentUser.email}}</a></li>
+          <li class="active"><a href="#">Hi, {{sessionAccount.account.name}}</a></li>
           <li class="active"><a href="#" {{action 'logout'}}>Logout</a></li>
         {{else}}
           <li class="active" id="songs">{{#link-to 'login'}}Login{{/link-to}}</li>
