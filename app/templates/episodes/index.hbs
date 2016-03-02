@@ -1,0 +1,10 @@
+Episodes:
+<ul>
+  {{#each model as |episode|}}
+  <li class="episodes">
+    {{#link-to 'episodes.episode' episode}}
+      {{episode.name}}
+    {{/link-to}}
+  </li>
+  {{/each}}
+</ul>

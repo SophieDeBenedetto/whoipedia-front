@@ -1,3 +1,26 @@
-<h2 id="title">Welcome to Ember</h2>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    {{#link-to 'index' class="navbar-brand"}}Who-ipedia{{/link-to}}
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        {{nav-bar}}
+        <li class="active" id="artists">{{link-to 'Seasons' 'seasons'}}</li>
+        <li class="active" id="albums">{{link-to 'Episodes' 'episodes'}}</li>
+        <li class="active" id="songs">{{link-to 'Writers' 'writers'}}</li>
+        {{#if session.isAuthenticated}}
+          <li class="active"><a href="#">Hi, {{session.currentUser.email}}</a></li>
+          <li class="active"><a href="#" {{action 'logout'}}>Logout</a></li>
+        {{else}}
+          <li class="active" id="songs">{{#link-to 'login'}}Login{{/link-to}}</li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="well col-sm-6 col-sm-offset-4">
 
 {{outlet}}
+</div>

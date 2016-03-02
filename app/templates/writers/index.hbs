@@ -1,0 +1,10 @@
+Writers:
+<ul>
+  {{#each model as |writer|}}
+  <li class="writers">
+    {{#link-to 'writers.writer' writer}}
+      {{writer.name}}
+    {{/link-to}}
+  </li>
+  {{/each}}
+</ul>

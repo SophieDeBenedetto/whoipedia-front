@@ -1,0 +1,10 @@
+Seasons:
+<ul>
+  {{#each model as |season|}}
+  <li class="seasons">
+    {{#link-to 'seasons.season' season}}
+      {{season.name}}
+    {{/link-to}}
+  </li>
+  {{/each}}
+</ul>

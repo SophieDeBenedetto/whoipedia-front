@@ -1,0 +1,16 @@
+<h4>{{model.name}}</h4>
+
+episodes:
+<ul>
+  {{#each model.episodes as |episode|}}
+    <li class="episodes">{{#link-to 'episodes.episode' episode}}{{episode.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+seasons:
+<ul>
+  {{#each model.seasons as |season|}}
+    <li class="seasons">{{#link-to 'seasons.season' season}}{{season.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
