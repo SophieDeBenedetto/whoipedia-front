@@ -14,7 +14,7 @@ Router.map(function() {
     this.route('episode', { path: '/:episode_id' });
     this.route('new');
   });
-  this.route('writer', function() {
+  this.route('writers', function() {
     this.route('writer', { path: '/:album_id' });
   });
   this.route('login');

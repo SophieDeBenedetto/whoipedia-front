@@ -7044,3 +7044,13 @@ a.list-group-item-danger.active:focus {
 .panel-default > .panel-heading {
   background-color: #464545;
 }
+
+.writer-list {
+  margin-left: -35px;
+  list-style: none;
+}
+
+.index-list {
+  list-style: none;
+  margin-right: 38px;
+}

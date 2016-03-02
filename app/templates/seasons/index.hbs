@@ -1,9 +1,9 @@
-Seasons:
-<ul>
+<h4>Seasons:</h4>
+<ul class="index-list">
   {{#each model as |season|}}
   <li class="seasons">
     {{#link-to 'seasons.season' season}}
-      {{season.name}}
+      Season {{season.number}}
     {{/link-to}}
   </li>
   {{/each}}

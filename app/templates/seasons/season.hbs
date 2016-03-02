@@ -1,9 +1,13 @@
-<h4>{{model.name}}</h4>
-<h5>{{model.startDate}} - {{model.endDate}}</h5>
+<h4>Season {{model.number}}</h4>
+<h5>{{format-date model.startDate}} - {{format-date model.endDate}}</h5>
 <h5>{{model.doctor}}</h5>
 
+<br>
+
 episodes:
-<ul>
+
+<br>
+<ul style="margin-right: 50px; list-style: none;">
   {{#each model.episodes as |episode|}}
     <li class="episodes">{{#link-to 'episodes.episode' episode}}{{episode.name}}{{/link-to}}</li>
   {{/each}}

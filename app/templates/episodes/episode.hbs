@@ -1,15 +1,18 @@
 <h4>{{model.name}}</h4>
-<h5>{{model.airDate}}</h5>
+<h5>{{format-date model.airDate}}</h5>
 
-<p>{{model.description}}</p>
-<p id="season">season: {{#link-to 'seasons.season' model.season.id}}{{model.season.name}}{{/link-to}}</p>
-
-
+<p id="season">{{#link-to 'seasons.season' model.season.id}}Season {{model.season.number}}{{/link-to}}</p>
 
 writers:
-<ul>
-  {{#each model.writers as |writer|}}
+
+<ul class="writer-list">
+  {{#each model.writers as |writer index|}}
     <li class="writers">{{#link-to 'writers.writer' writer}}{{writer.name}}{{/link-to}}</li>
   {{/each}}
 </ul>
+
+<p>{{model.description}}</p>
+
+
+
 
