@@ -1,0 +1,20 @@
+<form {{action "submit" on="submit"}}>
+
+<label for="name">Name</label>
+  {{input value=user.name placeholder="enter name" class="form-control"}}
+
+  <label for="email">Email</label>
+  {{input value=user.email placeholder="enter email" class="form-control"}}
+
+  <label for="password">Password</label>
+  {{input value=user.password type="password" placeholder="enter password" class="form-control my-form"}}
+
+  <label for="passwordConfirmation">Password Confirmation</label>
+  {{input value=user.passwordConfirmation type="password" placeholder="enter password again" class="form-control my-form"}}
+  <br>
+  <button type="submit" class="btn btn-default">Login</button>
+</form>
+
+{{#if errorMessage}}
+  {{errorMessage}}
+{{/if}}
