@@ -7,9 +7,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
         {{nav-bar}}
-        <li class="active" id="artists">{{link-to 'Seasons' 'seasons'}}</li>
-        <li class="active" id="albums">{{link-to 'Episodes' 'episodes'}}</li>
-        <li class="active" id="songs">{{link-to 'Writers' 'writers'}}</li>
+        <li class="active" id="seasons">{{link-to 'Seasons' 'seasons'}}</li>
+        <li class="active" id="episodes">{{link-to 'Episodes' 'episodes'}}</li>
+        <li class="active" id="writers">{{link-to 'Writers' 'writers'}}</li>
         {{#if session.isAuthenticated}}
           <li class="active"><a href="#">Hi, {{sessionAccount.account.name}}</a></li>
           <li class="active"><a href="#" {{action 'logout'}}>Logout</a></li>

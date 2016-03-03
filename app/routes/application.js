@@ -12,7 +12,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
 
   sessionAuthenticated() {
     this._loadCurrentUser().then(()=>{
-      this.transitionTo('/')
+      this.transitionTo('/');
     }).catch(() => this.get('session').invalidate());
   },
 
