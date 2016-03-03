@@ -1,0 +1,46 @@
+{{#if isEditing}}
+    <form {{action "submit" on="submit"}}>
+
+      <label for="name">Name</label>
+      {{input type="text" value=episode.name class="form-control"}}
+
+      <label for="airDate">Air Date</label>
+      {{input type="datetime" value=episode.airDate class="form-control"}}
+
+      <label for="season">Season</label>
+      {{input type="text" value=episode.season.number class="form-control"}}
+
+      <label for="writers">Writers</label>
+      {{#each episode.writers as |writer|}}
+        {{input type="text" value=writer.name class="form-control"}}
+      {{/each}}
+
+      <label for="description">Description</label>
+      {{input type="textarea" value=episode.description class="form-control"}}
+      <br>
+      <button type="submit" class="btn btn-default">Save</button>
+
+    </form>
+{{else}}
+
+
+  <h4 {{action "edit"}}>{{episode.name}}</h4>
+  <h5>{{format-date episode.airDate}}</h5>
+
+  <p id="season">{{#link-to 'seasons.season' episode.season.id}}Season {{episode.season.number}}{{/link-to}}</p>
+
+  writers:
+
+  <ul class="writer-list">
+    {{#each episode.writers as |writer index|}}
+      <li class="writers">{{#link-to 'writers.writer' writer}}{{writer.name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+
+  <p>{{episode.description}}</p>
+
+{{/if}}
+
+
+
+

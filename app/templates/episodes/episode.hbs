@@ -1,18 +1,1 @@
-<h4>{{model.name}}</h4>
-<h5>{{format-date model.airDate}}</h5>
-
-<p id="season">{{#link-to 'seasons.season' model.season.id}}Season {{model.season.number}}{{/link-to}}</p>
-
-writers:
-
-<ul class="writer-list">
-  {{#each model.writers as |writer index|}}
-    <li class="writers">{{#link-to 'writers.writer' writer}}{{writer.name}}{{/link-to}}</li>
-  {{/each}}
-</ul>
-
-<p>{{model.description}}</p>
-
-
-
-
+{{show-episode episode=model triggerUpdate=(action "update")}}
