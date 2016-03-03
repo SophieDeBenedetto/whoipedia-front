@@ -8,7 +8,8 @@ export default Ember.Component.extend({
     }, 
 
     submit(){
-      this.attrs.triggerUpdate();
+      let episode = this.get('episode')
+      this.attrs.triggerUpdate(episode);
       this.toggleProperty('isEditing');
     }
   }

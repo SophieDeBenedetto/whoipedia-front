@@ -1,11 +1,14 @@
-<h4>{{model.name}}</h4>
+<div class="well col-sm-6 col-sm-offset-3" style="text-align: center;">
 
-<h4>episodes:</h4>
+  <h4>{{model.name}}</h4>
+
+  <h4>episodes:</h4>
 
 
-<ul style="list-style: none; margin-right: 40px;">
-  {{#each model.episodes as |episode|}}
-    <li class="episodes">{{#link-to 'episodes.episode' episode}}{{episode.name}}{{/link-to}}</li>
-  {{/each}}
-</ul>
+  <ul style="list-style: none; margin-right: 40px;">
+    {{#each model.episodes as |episode|}}
+      <li class="episodes">{{#link-to 'episodes.episode' episode}}{{episode.name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+</div>
 

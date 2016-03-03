@@ -7060,3 +7060,15 @@ a.list-group-item-danger.active:focus {
 }
 
 
+.tardis-pic {
+    vertical-align: middle;
+    height: 400px;
+    width: 545px;
+    margin-left: 3%;
+}
+
+.season-side-bar {
+    text-align: center;
+    margin-right: 55px;
+    margin-left: 70px;
+} 

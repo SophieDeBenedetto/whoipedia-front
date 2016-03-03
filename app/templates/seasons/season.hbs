@@ -1,15 +1,22 @@
-<h4>Season {{model.number}}</h4>
-<h5>{{format-date model.startDate}} - {{format-date model.endDate}}</h5>
-<h5>{{model.doctor}}</h5>
+<div class="well col-sm-4 season-side-bar" style="text-align: center;">
 
-<br>
+  <h4>Season {{model.number}}</h4>
+  <h5>{{format-date model.startDate}} - {{format-date model.endDate}}</h5>
+  <h5>{{model.doctor}}</h5>
 
-episodes:
+  <br>
 
-<br>
-<ul style="margin-right: 50px; list-style: none;">
-  {{#each model.episodes as |episode|}}
-    <li class="episodes">{{#link-to 'episodes.episode' episode}}{{episode.name}}{{/link-to}}</li>
-  {{/each}}
-</ul>
+  episodes:
+
+  <br>
+  <ul style="margin-right: 50px; list-style: none;">
+    {{#each model.episodes as |episode|}}
+      <li class="episodes" {{action "selectEp" episode}}><a href="#">{{episode.name}}</a></li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class="well col-sm-6" style="text-align: center;">
+  {{show-episode episode=currentEpisode triggerUpdate=(action "updateEpisode")}}
+</div>
 
