@@ -5,16 +5,19 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-left">
         {{nav-bar}}
-        <li class="active" id="seasons">{{link-to 'Seasons' 'seasons'}}</li>
-        <li class="active" id="episodes">{{link-to 'Episodes' 'episodes'}}</li>
-        <li class="active" id="writers">{{link-to 'Writers' 'writers'}}</li>
+        <li class="my-nav-li" id="seasons">{{link-to 'Seasons' 'seasons'}}</li>
+        <li class="my-nav-li" id="episodes">{{link-to 'Episodes' 'episodes'}}</li>
+        <li class="my-nav-li" id="writers">{{link-to 'Writers' 'writers'}}</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         {{#if session.isAuthenticated}}
-          <li class="active"><a href="#">Hi, {{sessionAccount.account.name}}</a></li>
-          <li class="active"><a href="#" {{action 'logout'}}>Logout</a></li>
+          <li class="my-nav-li"><a href="#">Hi, {{sessionAccount.account.name}}</a></li>
+          <li class="my-nav-li"><a href="#" {{action 'logout'}}>Logout</a></li>
         {{else}}
-          <li class="active" id="songs">{{#link-to 'login'}}Login{{/link-to}}</li>
+          <li class="my-nav-li" id="login">{{#link-to 'login'}}Login{{/link-to}}</li>
+          <li class="my-nav-li" id="signup">{{#link-to 'signup'}}Sign Up{{/link-to}}</li>
         {{/if}}
       </ul>
     </div>

@@ -7015,7 +7015,7 @@ textarea:focus {
 a.list-group-item.active,
 a.list-group-item.active:hover,
 a.list-group-item.active:focus {
-  border-color: #464545;
+  border-color: pink;
 }
 a.list-group-item-success.active {
   background-color: #00bc8c;
@@ -7054,4 +7054,9 @@ a.list-group-item-danger.active:focus {
   list-style: none;
   margin-right: 38px;
 }
+
+.my-nav-li:hover {
+  background-color: #00a379;
+}
+
 
