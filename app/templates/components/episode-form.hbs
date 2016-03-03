@@ -1,0 +1,26 @@
+{{#if isCreating}}
+  
+  <form {{action "submit" on="submit"}}>
+
+    <label for="name">Name</label>
+    {{input type="text" value=episode.name class="form-control"}}
+
+    <label for="airDate">Air Date</label>
+    {{input type="datetime" value=episode.airDate class="form-control"}}
+
+    <label for="description">Description</label>
+    {{input type="text-area" value=episode.description class="form-control"}}
+
+    <label for="writers">Writers</label>
+    {{#each episode.writers as |writer|}}
+      {{input type="text" value=writer.name class="form-control"}}
+    {{/each}}
+
+    <br>
+    <button type="submit" class="btn btn-default">Save</button>
+
+  </form>
+
+{{else}}
+  <button class="btn btn-default" {{action "triggerCreate"}}>New</button>
+{{/if}}
