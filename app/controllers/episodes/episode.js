@@ -6,6 +6,10 @@ export default Ember.Controller.extend({
    return this.store.findAll('season');
   }),
 
+  allWriters: Ember.computed(function(){
+    return this.store.findAll('writer');
+  })
+
   actions: {
     update(){
       var episode = this.get('model');

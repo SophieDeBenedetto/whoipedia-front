@@ -4,7 +4,7 @@
   <ul class="index-list">
     {{#each model as |season|}}
     <li class="seasons">
-      {{#link-to 'seasons.season' season}}
+      {{#link-to 'seasons.season' season.id}}
         Season {{season.number}}
       {{/link-to}}
     </li>

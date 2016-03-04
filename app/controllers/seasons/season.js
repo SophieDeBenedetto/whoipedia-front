@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  currentEpisode: null,
+
+  episodeController: Ember.inject.controller('episodes.episode'),
+  allSeasons: Ember.computed.reads('episodeController.allSeasons'),
+
   newEpisode: Ember.computed({
     get() {
       let newEpisode = this.store.createRecord('episode');
@@ -14,10 +19,6 @@ export default Ember.Controller.extend({
       this.get('model').get('episodes').addObject(newEpisode)
       return newEpisode;
     }
-  }),
-
-  allSeasons: Ember.computed(function(){
-   return this.store.findAll('season');
   }),
 
   actions: {
