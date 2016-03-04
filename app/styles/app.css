@@ -7072,3 +7072,18 @@ a.list-group-item-danger.active:focus {
     margin-right: 55px;
     margin-left: 70px;
 } 
+
+input.form-control {
+  background-color: #e6fff2;
+}
+
+textarea.form-control{
+  background-color: #e6fff2;
+  height: 250px;
+}
+
+.checkbox-list > ul {
+  list-style: none;
+}
+}
+

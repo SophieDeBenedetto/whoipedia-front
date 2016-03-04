@@ -8,11 +8,14 @@ export default Ember.Controller.extend({
 
   allWriters: Ember.computed(function(){
     return this.store.findAll('writer');
-  })
+  }),
 
   actions: {
     update(){
       var episode = this.get('model');
+      // debugger;
+      // episode.set('writers', this.get('selectedWriters'))
+      // debugger;
       episode.save();
     }, 
 
