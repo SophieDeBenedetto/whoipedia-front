@@ -5,6 +5,10 @@ export default Ember.Controller.extend({
     update(){
       var episode = this.get('model')
       episode.save();
+    }, 
+
+    transition(){
+      this.transitionToRoute("episodes");
     }
   }
 });

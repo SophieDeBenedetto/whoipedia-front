@@ -11,6 +11,19 @@ export default Ember.Component.extend({
       let episode = this.get('episode')
       this.attrs.triggerUpdate(episode);
       this.toggleProperty('isEditing');
+    }, 
+
+    destroy(){
+      let episode = this.get('episode');
+      episode.destroyRecord();
+      this.attrs.triggerTransition(episode);
+      // debugger;
+      // // ().then(()=>{
+      // //   this.attrs.resetOnDelete(episode);
+      // // });
+      // debugger;
+      // this.set('episode', null);
+      // debugger;
     }
   }
 });
