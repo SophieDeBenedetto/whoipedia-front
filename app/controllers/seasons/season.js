@@ -13,7 +13,6 @@ export default Ember.Controller.extend({
       let newEpisode = this.store.createRecord('episode');
       this.get('model').get('episodes').addObject(newEpisode)
       return newEpisode;
-
     }
   }),
 
@@ -38,8 +37,5 @@ export default Ember.Controller.extend({
       this.set('currentEpisode', null);
       this.transitionToRoute('seasons.season', this.get('model').get('id'));
     } 
-
-    // resetCurrentEpisode(episode){
-    // }
   }
 });
