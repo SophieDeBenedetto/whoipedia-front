@@ -17,7 +17,9 @@
 </div>
 
 <div class="well col-sm-6" style="text-align: center;">
-  {{show-episode episode=currentEpisode triggerUpdate=(action "updateEpisode") triggerTransition=(action "transition")}}
+  {{show-episode episode=currentEpisode allSeasons=allSeasons triggerUpdate=(action "updateEpisode") triggerTransition=(action "transition") triggerSelectSeason=(action "selectSeason")}}
+  
+
 </div>
 
 <div class="well col-sm-6" style="text-align: center; margin-left: 43.5%;">

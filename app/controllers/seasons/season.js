@@ -16,13 +16,21 @@ export default Ember.Controller.extend({
     }
   }),
 
+  allSeasons: Ember.computed(function(){
+   return this.store.findAll('season');
+  }),
+
   actions: {
     selectEp(episode){
       this.set('currentEpisode', episode)
     },
 
     updateEpisode(episode){
-      episode.save();
+      episode.save().then((episode)=>{
+        if (episode.get('season') != this.get('model')) {
+          this.set('currentEpisode', null);
+        }
+      });
     }, 
 
     saveEpisode(episode){
@@ -36,6 +44,10 @@ export default Ember.Controller.extend({
       season.get('episodes').removeObject(episode)
       this.set('currentEpisode', null);
       this.transitionToRoute('seasons.season', this.get('model').get('id'));
+    },
+
+    selectSeason(selectedSeason, episode){
+      episode.set('season', selectedSeason);
     } 
   }
 });

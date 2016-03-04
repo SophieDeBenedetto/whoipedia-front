@@ -8,12 +8,26 @@
         <label for="airDate">Air Date</label>
         {{input type="datetime" value=episode.airDate class="form-control"}}
 
+        <br>
+
         <label for="season">Season</label>
-        {{input type="text" value=episode.season.number class="form-control"}}
+
+        {{simple-select 
+          content=allSeasons
+          optionLabelPath="number"
+          optionValuePath="id"
+          selection=currentlySelectedObject
+          value=allSeasons.id
+          prompt="choose a season"
+          action="onSelectChange"
+        }}
+        <br>
+        {{!-- {{input type="text" value=episode.season.number class="form-control"}} --}}
 
         <label for="writers">Writers</label>
         {{#each episode.writers as |writer|}}
           {{input type="text" value=writer.name class="form-control"}}
+          <br>
         {{/each}}
 
         <label for="description">Description</label>

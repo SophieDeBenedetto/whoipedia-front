@@ -17,6 +17,13 @@ export default Ember.Component.extend({
       let episode = this.get('episode');
       episode.destroyRecord();
       this.attrs.triggerTransition(episode);
+    }, 
+
+    onSelectChange(selection, value){
+      let episode = this.get('episode')
+      this.attrs.triggerSelectSeason(selection, episode);
     }
   }
 });
+
+
