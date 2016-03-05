@@ -20,12 +20,17 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://whoipedia-api.herokuapp.com",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline",
+      'media-src': "'self'"
+    };
+  };
+
 
   if (environment === 'test') {
     // Testem prefers this...
@@ -40,7 +45,15 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.contentSecurityPolicy = {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://whoipedia-api.herokuapp.com/api/v1/episodes",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline",
+      'media-src': "'self'"
+    }
   }
 
   return ENV;

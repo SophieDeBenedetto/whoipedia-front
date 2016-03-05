@@ -14,9 +14,6 @@ export default Ember.Controller.extend({
   actions: {
     update(){
       var episode = this.get('model');
-      // debugger;
-      // episode.set('writers', this.get('selectedWriters'))
-      // debugger;
       episode.save();
     }, 
 
