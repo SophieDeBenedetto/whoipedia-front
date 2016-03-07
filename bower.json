@@ -15,7 +15,10 @@
     "mocha": "~2.2.4",
     "chai": "~2.3.0",
     "ember-mocha-adapter": "~0.3.1",
-    "ember-mocha": "~0.8.8"
+    "ember-mocha": "~0.8.8",
+    "d3": "~3.5.3",
+    "lodash": "~3.10.0",
+    "bootstrap": "~3.3.5"
   },
   "resolutions": {
     "ember": "2.3.1"
