@@ -12,12 +12,15 @@
     {{input type="text-area" value=episode.description class="form-control"}}
 
     <label for="writers">Writers</label>
-    {{#each episode.writers as |writer|}}
-      {{input type="text" value=writer.name class="form-control"}}
-    {{/each}}
-
+    <div id="checkbox-list">
+        {{multiselect-checkboxes 
+          options=allWriters
+          selection=selectedWriters
+          labelProperty="name"}}
+    </div>
     <br>
     <button type="submit" class="btn btn-default">Save</button>
+    <button type="cancel" class="btn btn-default" {{action "cancelNew"}}>Cancel</button>
 
   </form>
 

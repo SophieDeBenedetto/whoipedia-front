@@ -20,14 +20,22 @@ export default Ember.Component.extend({
     }, 
 
     destroy(){
-      let episode = this.get('episode');
-      episode.destroyRecord();
-      this.attrs.triggerTransition(episode);
+      if (this.get('session.isAuthenticated')) {
+        let episode = this.get('episode');
+        episode.destroyRecord();
+        this.attrs.triggerTransition(episode);
+      }else {
+        alert("Sign up or log in to delete an episode")
+      }
     }, 
 
     onSelectChange(selection, value){
       let episode = this.get('episode')
       this.attrs.triggerSelectSeason(selection, episode);
+    }, 
+
+    cancelEdit(){
+      this.toggleProperty('isEditing');
     }
   }
 });
