@@ -49,6 +49,6 @@ export default Ember.Controller.extend({
 
     selectSeason(selectedSeason, episode){
       episode.set('season', selectedSeason);
-    } 
+    }
   }
 });
