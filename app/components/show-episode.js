@@ -2,9 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 
+  session: Ember.inject.service('session'),
+
   actions: {
     edit(){
-      this.toggleProperty('isEditing');
+      if (this.get('session.isAuthenticated')) {
+        this.toggleProperty('isEditing');
+      }else {
+        alert("Sign up or log in to edit an episode")
+      }
     }, 
 
     submit(){

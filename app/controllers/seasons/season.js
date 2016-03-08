@@ -21,23 +21,6 @@ export default Ember.Controller.extend({
     }
   }),
 
-  bubbleData: Ember.computed(function() {
-    return [
-      {
-        value: 825111,
-        label: 'San Francisco'
-      },
-      {
-        value: 984299,
-        label: 'San Jose'
-      },
-      {
-        value: 400740,
-        label: 'Oakland'
-      }
-    ]
-  }),
-
   actions: {
     selectEp(episode){
       this.set('currentEpisode', episode)
