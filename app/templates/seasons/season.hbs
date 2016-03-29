@@ -1,34 +1,40 @@
-<div class="well col-sm-4 season-side-bar" style="text-align: center;">
-
-  <h4>Season {{model.number}}</h4>
-  <h5>{{format-date model.startDate}} - {{format-date model.endDate}}</h5>
-  <h5>{{model.doctor}}</h5>
-
-  <br>
-
-  episodes:
-
-  <br>
-  <ul style="margin-right: 50px; list-style: none;">
-    {{#each model.episodes as |episode|}}
-      <li class="episodes" {{action "selectEp" episode}}><a href="#">{{episode.name}}</a></li>
-    {{/each}}
-  </ul>
-</div>
-
-<div class="well col-sm-6" style="text-align: center;">
-
-  {{show-episode 
-  episode=currentEpisode 
-  allSeasons=allSeasons 
-  triggerUpdate=(action "updateEpisode") 
-  triggerTransition=(action "transition") 
-  triggerSelectSeason=(action "selectSeason")
-  }}
+<div class="container-fluid">
   
-</div>
 
-<div class="well col-sm-6" style="text-align: center;">
+<div class="row col-md-offset-1">
+  
+
+  <div class="well col-md-4" style="text-align: center;">
+
+    <h4>Season {{model.number}}</h4>
+    <h5>{{format-date model.startDate}} - {{format-date model.endDate}}</h5>
+    <h5>{{model.doctor}}</h5>
+
+    <br>
+
+    episodes:
+
+    <br>
+    <ul style="margin-right: 50px; list-style: none;">
+      {{#each model.episodes as |episode|}}
+        <li class="episodes" {{action "selectEp" episode}}><a href="#">{{episode.name}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="well col-md-6 col-md-offset-1" style="text-align: center;">
+
+    {{show-episode 
+    episode=currentEpisode 
+    allSeasons=allSeasons 
+    triggerUpdate=(action "updateEpisode") 
+    triggerTransition=(action "transition") 
+    triggerSelectSeason=(action "selectSeason")
+    }}
+    
+  </div>
+
+<div class="well col-md-6 col-md-offset-5" style="text-align: center;">
   
     {{episode-form 
     allWriters=episodeController.allWriters 
@@ -36,6 +42,8 @@
     triggerSaveEpisode=(action "saveEpisode")
     }}
   
+</div>
+</div>
 </div>
 
 
